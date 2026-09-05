@@ -130,16 +130,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ---------------------------------------------------------------------------
 SITE_NAME = "WebOra"
 SITE_TAGLINE = "Modern Websites. Better First Impressions."
-WHATSAPP_NUMBER = "919537494266"  # e.g. "919999999999" (no + or spaces) — leave blank until configured
+WHATSAPP_NUMBER = "91w9537494266"  # e.g. "919999999999" (no + or spaces) — leave blank until configured
 CONTACT_EMAIL = "webora051005@gmail.com"  # placeholder — replace with real business email
 INSTAGRAM_HANDLE = "_webora._"  # placeholder — replace with real handle
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+# MAILERS = {
+#     'default': {
+#         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+#     },
+# }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
