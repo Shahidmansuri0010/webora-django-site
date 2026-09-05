@@ -1,0 +1,46 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ meta_title|default:"WebOra | Modern Website Design & Development" }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ meta_description|default:'WebOra builds modern, responsive and professional websites for businesses, restaurants, cafes, salons, real estate, e-commerce and more.' }}{% endblock %}">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="WebOra">
+  <meta property="og:title" content="{{ meta_title|default:'WebOra | Modern Website Design & Development' }}">
+  <meta property="og:description" content="{{ meta_description|default:'WebOra builds modern, responsive and professional websites for businesses, restaurants, cafes, salons, real estate, e-commerce and more.' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{% static 'main/img/webora-logo-nav.png' %}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/png" href="{% static 'main/img/webora-favicon.png' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'main/css/tokens.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/hero.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/components.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/forms.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  {% include "partials/icons.html" %}
+  {% include "partials/navbar.html" %}
+
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "partials/footer.html" %}
+  {% include "partials/whatsapp_button.html" %}
+
+  <script src="{% static 'main/js/main.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

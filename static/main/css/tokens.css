@@ -1,0 +1,64 @@
+/* =========================================================================
+   WebOra — Design Tokens
+   Palette derived from the WebOra brand mark: deep navy, teal/cyan network
+   lines, and a small warm gold ring around the "O". Gold is reserved for
+   rare, meaningful emphasis (never large fills).
+   ========================================================================= */
+
+:root {
+  /* Core palette */
+  --ink:            #0A1E33;   /* primary dark — headings, dark sections */
+  --ink-2:          #0F2C48;   /* secondary dark — panels on dark bg */
+  --navy:           #123A5E;   /* brand navy — primary buttons, links */
+  --navy-dim:       #1B4A73;
+  --teal:           #12909C;   /* brand teal — secondary accent */
+  --cyan:           #2FC4C9;   /* bright accent — highlights, small details */
+  --gold:           #E4A339;   /* rare accent — badges, single emphasis points */
+  --gold-soft:      #F6E3BE;
+
+  --paper:          #FFFFFF;
+  --paper-2:        #F5F8FA;   /* section alt background */
+  --paper-3:        #EEF3F6;
+  --line:           #E1E8ED;   /* hairline borders */
+  --line-strong:    #CBD7DE;
+
+  --text:           #16283C;   /* body text on light */
+  --text-soft:      #52697C;   /* muted body text */
+  --text-faint:     #8298A8;
+  --text-on-dark:   #EAF1F5;
+  --text-on-dark-soft: #A9C0CE;
+
+  /* Type */
+  --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Shadow — used sparingly, mostly on interactive elevation */
+  --shadow-sm: 0 1px 2px rgba(10, 30, 51, 0.06);
+  --shadow-md: 0 8px 24px rgba(10, 30, 51, 0.10);
+  --shadow-lg: 0 20px 48px rgba(10, 30, 51, 0.16);
+
+  /* Layout */
+  --container: 1180px;
+  --container-narrow: 760px;
+  --nav-height: 76px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fast: 180ms;
+  --med: 320ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

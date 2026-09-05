@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Business website preview">
+  <rect width="640" height="480" fill="#F3F6F8"/>
+  <!-- nav bar -->
+  <rect x="0" y="0" width="640" height="56" fill="#F3F6F8"/>
+  <line x1="0" y1="56" x2="640" y2="56" stroke="rgba(10,20,30,0.08)" stroke-width="1"/>
+  <circle cx="36" cy="28" r="7" fill="#12909C"/>
+  <rect x="52" y="23" width="70" height="10" rx="3" fill="#0A1E33" opacity="0.85"/>
+  <rect x="420" y="23" width="34" height="10" rx="3" fill="rgba(10,20,30,0.35)"/>
+  <rect x="466" y="23" width="34" height="10" rx="3" fill="rgba(10,20,30,0.35)"/>
+  <rect x="512" y="23" width="34" height="10" rx="3" fill="rgba(10,20,30,0.35)"/>
+  <rect x="562" y="17" width="60" height="22" rx="11" fill="#12909C"/>
+
+  <!-- hero -->
+  <rect x="40" y="90" width="320" height="18" rx="4" fill="#0A1E33"/>
+  <rect x="40" y="118" width="240" height="18" rx="4" fill="#0A1E33" opacity="0.85"/>
+  <rect x="40" y="150" width="200" height="10" rx="3" fill="rgba(10,20,30,0.35)"/>
+  <rect x="40" y="168" width="160" height="10" rx="3" fill="rgba(10,20,30,0.35)"/>
+  <rect x="40" y="196" width="110" height="34" rx="8" fill="#12909C"/>
+  <rect x="162" y="196" width="110" height="34" rx="8" fill="none" stroke="#0A1E33" stroke-width="1.5" opacity="0.5"/>
+
+  <rect x="400" y="90" width="200" height="150" rx="12" fill="rgba(10,20,30,0.04)" stroke="rgba(10,20,30,0.08)"/>
+  <circle cx="500" cy="150" r="34" fill="#12909C" opacity="0.55"/>
+
+  <!-- content cards -->
+  <g>
+    <rect x="40" y="270" width="168" height="130" rx="10" fill="rgba(10,20,30,0.04)" stroke="rgba(10,20,30,0.08)"/>
+    <rect x="56" y="286" width="136" height="60" rx="6" fill="#12909C" opacity="0.35"/>
+    <rect x="56" y="356" width="100" height="10" rx="3" fill="#0A1E33" opacity="0.8"/>
+    <rect x="56" y="374" width="70" height="8" rx="3" fill="rgba(10,20,30,0.35)"/>
+  </g>
+  <g>
+    <rect x="236" y="270" width="168" height="130" rx="10" fill="rgba(10,20,30,0.04)" stroke="rgba(10,20,30,0.08)"/>
+    <rect x="252" y="286" width="136" height="60" rx="6" fill="#12909C" opacity="0.25"/>
+    <rect x="252" y="356" width="100" height="10" rx="3" fill="#0A1E33" opacity="0.8"/>
+    <rect x="252" y="374" width="70" height="8" rx="3" fill="rgba(10,20,30,0.35)"/>
+  </g>
+  <g>
+    <rect x="432" y="270" width="168" height="130" rx="10" fill="rgba(10,20,30,0.04)" stroke="rgba(10,20,30,0.08)"/>
+    <rect x="448" y="286" width="136" height="60" rx="6" fill="#12909C" opacity="0.45"/>
+    <rect x="448" y="356" width="100" height="10" rx="3" fill="#0A1E33" opacity="0.8"/>
+    <rect x="448" y="374" width="70" height="8" rx="3" fill="rgba(10,20,30,0.35)"/>
+  </g>
+
+  <!-- footer strip -->
+  <rect x="0" y="432" width="640" height="48" fill="#0A1E33" opacity="0.92"/>
+</svg>

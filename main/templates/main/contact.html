@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-mail"/></svg> Get in touch</span>
+    <h1>Let's Build Something Great</h1>
+    <p>Tell WebOra about your business and requirements, and we'll get back to you to discuss your project.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-panel reveal">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert-success">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="{{ form.name.id_for_label }}">Name</label>
+              {{ form.name }}
+              {% if form.name.errors %}<div class="form-errors">{{ form.name.errors|join:" " }}</div>{% endif %}
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="{{ form.business_name.id_for_label }}">Business Name</label>
+              {{ form.business_name }}
+              {% if form.business_name.errors %}<div class="form-errors">{{ form.business_name.errors|join:" " }}</div>{% endif %}
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="{{ form.email.id_for_label }}">Email</label>
+              {{ form.email }}
+              {% if form.email.errors %}<div class="form-errors">{{ form.email.errors|join:" " }}</div>{% endif %}
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="{{ form.phone.id_for_label }}">Phone / WhatsApp</label>
+              {{ form.phone }}
+              {% if form.phone.errors %}<div class="form-errors">{{ form.phone.errors|join:" " }}</div>{% endif %}
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="{{ form.business_type.id_for_label }}">Business Type</label>
+              {{ form.business_type }}
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="{{ form.website_requirement.id_for_label }}">Website Requirement</label>
+              {{ form.website_requirement }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="{{ form.message.id_for_label }}">Message</label>
+            {{ form.message }}
+            {% if form.message.errors %}<div class="form-errors">{{ form.message.errors|join:" " }}</div>{% endif %}
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send Enquiry</button>
+        </form>
+      </div>
+
+      <div class="contact-side">
+        <div class="card contact-info-card">
+          <span class="icon-circle"><svg><use href="#icon-whatsapp"/></svg></span>
+          <div>
+            <h4>WhatsApp</h4>
+            {% if whatsapp_number %}
+              <p><a href="https://wa.me/{{ whatsapp_number }}" target="_blank" rel="noopener">Chat with WebOra</a></p>
+            {% else %}
+              <p>Configure a WhatsApp number to enable direct chat.</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="card contact-info-card">
+          <span class="icon-circle"><svg><use href="#icon-mail"/></svg></span>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+          </div>
+        </div>
+        <div class="card contact-info-card">
+          <span class="icon-circle"><svg><use href="#icon-instagram"/></svg></span>
+          <div>
+            <h4>Instagram</h4>
+            <p><a href="https://instagram.com/{{ instagram_handle }}" target="_blank" rel="noopener">@{{ instagram_handle }}</a></p>
+          </div>
+        </div>
+        <p class="contact-note">WebOra typically responds within one business day. For urgent enquiries, WhatsApp is fastest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

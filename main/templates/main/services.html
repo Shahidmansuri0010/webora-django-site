@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-briefcase"/></svg> What WebOra builds</span>
+    <h1>Websites Built Around Your Business</h1>
+    <p>Whether you're starting from scratch or upgrading your online presence, WebOra creates websites designed around your business and your customers.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4">
+      {% for s in services %}
+      <div class="card service-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ s.icon }}"/></svg></span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="services-footer-cta">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Discuss Your Project</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Why Businesses Choose WebOra</h2>
+    </div>
+    <div class="grid grid-3">
+      {% for w in why_webora %}
+      <div class="card why-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ w.icon }}"/></svg></span>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta section-dark">
+  <div class="container">
+    <h2>Ready to Build Your Online Presence?</h2>
+    <p>Tell WebOra about your business and let's build a website that makes a strong first impression.</p>
+    <div class="final-cta-actions">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Get Your Website</a>
+      <a href="{% url 'main:portfolio' %}" class="btn btn-outline btn-lg">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

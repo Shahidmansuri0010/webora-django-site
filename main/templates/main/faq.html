@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-chat"/></svg> Frequently asked</span>
+    <h1>Questions About Working With WebOra</h1>
+    <p>Answers about pricing, hosting, deployment and how the process works.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="faq-list">
+      {% for item in faqs %}
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          {{ item.question }}
+          <span class="plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner"><p>{{ item.answer }}</p></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta section-dark">
+  <div class="container">
+    <h2>Still Have Questions?</h2>
+    <p>Reach out and WebOra will help you figure out the right starting point for your business.</p>
+    <div class="final-cta-actions">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Get Your Website</a>
+      <a href="{% url 'main:contact' %}" class="btn btn-whatsapp btn-lg">
+        <svg width="18" height="18"><use href="#icon-whatsapp"/></svg>
+        WhatsApp WebOra
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

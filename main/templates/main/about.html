@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-user"/></svg> About WebOra</span>
+    <h1>We Build Websites That Represent Your Business.</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <p class="about-lead">WebOra helps businesses establish a stronger digital presence through modern website design and custom web development. We focus on creating websites that look professional, work smoothly across devices, and communicate the value of a business clearly.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Why Businesses Choose WebOra</h2>
+    </div>
+    <div class="grid grid-3">
+      {% for w in why_webora %}
+      <div class="card why-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ w.icon }}"/></svg></span>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Modern Technology. Professional Results.</h2>
+    </div>
+    <div class="tech-strip">
+      {% for t in technologies %}
+      <span class="tech-chip">{{ t }}</span>
+      {% endfor %}
+    </div>
+    <p class="tech-note">The technology is behind the scenes. The result is a website your customers can trust.</p>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2 style="color: var(--ink);">Ready to Work With WebOra?</h2>
+    <p style="color: var(--text-soft);">Let's talk about your business and what you need from your website.</p>
+    <div class="final-cta-actions">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Get Your Website</a>
+      <a href="{% url 'main:portfolio' %}" class="btn btn-outline btn-lg">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

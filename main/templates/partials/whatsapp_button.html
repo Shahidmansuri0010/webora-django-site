@@ -1,0 +1,12 @@
+{% if whatsapp_number %}
+<a href="https://wa.me/{{ whatsapp_number }}" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with WebOra on WhatsApp">
+  <svg><use href="#icon-whatsapp"/></svg>
+  <span>Chat with WebOra</span>
+</a>
+{% else %}
+{# WhatsApp number not yet configured. Set settings.WHATSAPP_NUMBER to enable this button. #}
+<a href="{% url 'main:contact' %}" class="whatsapp-float" aria-label="Contact WebOra">
+  <svg><use href="#icon-whatsapp"/></svg>
+  <span>Chat with WebOra</span>
+</a>
+{% endif %}

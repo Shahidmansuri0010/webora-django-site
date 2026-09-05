@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-design"/></svg> Our work</span>
+    <h1>Our Work</h1>
+    <p>Explore examples of the kind of websites WebOra can create for modern businesses. These are demonstration projects created to showcase design and functionality, not live client sites.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="portfolio-grid">
+      {% for p in portfolio %}
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-thumb">
+          <span class="demo-tag">Demo Project</span>
+          <img src="{% static 'main/'|add:p.image %}" alt="{{ p.title }} preview mockup" loading="lazy" width="640" height="480">
+          <div class="portfolio-overlay">
+            <a href="{% url 'main:contact' %}" class="btn btn-primary btn-sm">View Demo</a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-category">{{ p.category }}</span>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="portfolio-cta reveal">
+      <h3>Want a Website Like This?</h3>
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

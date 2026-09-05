@@ -1,0 +1,63 @@
+{% load static %}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="{% static 'main/img/webora-logo-nav.png' %}" alt="WebOra logo" class="footer-logo">        <p>Modern Websites. Better First Impressions.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/{{ instagram_handle }}" aria-label="WebOra on Instagram" target="_blank" rel="noopener">
+            <svg><use href="#icon-instagram"/></svg>
+          </a>
+          <a href="mailto:{{ contact_email }}" aria-label="Email WebOra">
+            <svg><use href="#icon-mail"/></svg>
+          </a>
+          {% if whatsapp_number %}
+          <a href="https://wa.me/{{ whatsapp_number }}" aria-label="WhatsApp WebOra" target="_blank" rel="noopener">
+            <svg><use href="#icon-whatsapp"/></svg>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-heading">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="{% url 'main:home' %}">Home</a></li>
+          <li><a href="{% url 'main:services' %}">Services</a></li>
+          <li><a href="{% url 'main:portfolio' %}">Work</a></li>
+          <li><a href="{% url 'main:pricing' %}">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="{% url 'main:about' %}">About</a></li>
+          <li><a href="{% url 'main:process' %}">Process</a></li>
+          <li><a href="{% url 'main:faq' %}">FAQ</a></li>
+          <li><a href="{% url 'main:contact' %}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-heading">Get in touch</div>
+        <ul class="footer-links">
+          <li><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></li>
+          <li><a href="https://instagram.com/{{ instagram_handle }}" target="_blank" rel="noopener">@{{ instagram_handle }}</a></li>
+          <li>
+            {% if whatsapp_number %}
+              <a href="https://wa.me/{{ whatsapp_number }}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            {% else %}
+              WhatsApp (configure number)
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 WebOra. All rights reserved.</span>
+      <span class="footer-disclaimer">Website development fees are separate from domain, hosting, deployment and third-party service costs.</span>
+    </div>
+  </div>
+</footer>

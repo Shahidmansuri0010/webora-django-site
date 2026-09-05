@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="page-header">
+  <div class="container">
+    <span class="pill"><svg width="14" height="14"><use href="#icon-price"/></svg> Pricing</span>
+    <h1>Simple &amp; Transparent Pricing</h1>
+    <p>Choose a starting package based on your business requirements. All packages are development fees — see below for what's not included.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="pricing-grid">
+      {% for plan in pricing %}
+      <div class="card price-card reveal {% if plan.highlight %}is-highlight{% endif %}">
+        {% if plan.badge %}<span class="price-badge">{{ plan.badge }}</span>{% endif %}
+        <h3>{{ plan.name }}</h3>
+        <div class="price-value"><span class="amount">{{ plan.price }}</span></div>
+        <div class="price-label">{{ plan.label }}</div>
+        <p class="price-suited">{{ plan.suited_for }}</p>
+        <ul class="price-features">
+          {% for f in plan.features %}
+          <li><svg><use href="#icon-check"/></svg>{{ f }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{% url 'main:contact' %}" class="btn {% if plan.highlight %}btn-primary{% else %}btn-outline{% endif %} btn-block">{{ plan.cta }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight section-alt">
+  <div class="container container-narrow">
+    <div class="costs-panel reveal">
+      <div class="costs-panel-top">
+        <span class="icon-circle"><svg><use href="#icon-price"/></svg></span>
+        <div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 6px;">Important: What Is Not Included</h2>
+          <p>The prices shown above are WebOra's website design and development charges only.</p>
+        </div>
+      </div>
+      <p>The following costs are separate and are paid by the client:</p>
+      <ul class="costs-list">
+        <li>Domain name</li>
+        <li>Web hosting / server</li>
+        <li>Deployment / server setup</li>
+        <li>Paid APIs</li>
+        <li>Payment gateway charges</li>
+        <li>Premium plugins</li>
+        <li>Premium themes/assets</li>
+        <li>Third-party services</li>
+        <li>Email services where applicable</li>
+        <li>Other external infrastructure costs</li>
+      </ul>
+      <div class="costs-callout">
+        <strong>Please note:</strong> Domain, hosting, deployment, paid APIs, third-party services and other external costs are not included in the development fee and are paid separately by the client.
+      </div>
+      <p class="costs-note">Final pricing may vary depending on project requirements, number of pages and advanced functionality.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="quote-cta reveal">
+      <h2>Need Something More Custom?</h2>
+      <p>Every business is different. If you need custom functionality, e-commerce features, dashboards, integrations or a larger website, WebOra can create a solution based on your requirements.</p>
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Request a Custom Quote</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

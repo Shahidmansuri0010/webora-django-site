@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill">
+        <svg width="14" height="14"><use href="#icon-sparkle"/></svg>
+        Website design &amp; development
+      </span>
+      <h1>Your Business Deserves a Better Website.</h1>
+      <p class="hero-sub">WebOra designs and develops modern, fast, responsive websites that help businesses build trust, strengthen their online presence, and turn visitors into customers.</p>
+      <div class="hero-actions">
+        <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Get Your Website</a>
+        <a href="{% url 'main:portfolio' %}" class="btn btn-outline btn-lg">View Our Work</a>
+      </div>
+      <div class="hero-trustline">
+        <span>Modern Design</span><span class="dot"></span>
+        <span>Mobile Responsive</span><span class="dot"></span>
+        <span>Fast</span><span class="dot"></span>
+        <span>Business Focused</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="browser-mock">
+        <div class="browser-bar">
+          <span class="dot-btn"></span><span class="dot-btn"></span><span class="dot-btn"></span>
+          <span class="url-chip">yourbusiness.com</span>
+        </div>
+        <div class="browser-body">
+          <div class="mock-nav">
+            <span class="mock-logo"></span>
+            <div class="mock-nav-links"><span></span><span></span><span></span></div>
+          </div>
+          <div class="mock-hero">
+            <div class="line"></div>
+            <div class="line short"></div>
+            <div class="btns"><span></span><span></span></div>
+          </div>
+          <div class="mock-cards">
+            <div class="mc"><div class="sq"></div><div class="ln"></div><div class="ln w60"></div></div>
+            <div class="mc"><div class="sq"></div><div class="ln"></div><div class="ln w60"></div></div>
+            <div class="mc"><div class="sq"></div><div class="ln"></div><div class="ln w60"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-badge-float">
+        <span class="ring">A+</span>
+        <span class="txt"><strong>Built to convert</strong><span>Design that earns trust</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="container trust-strip-inner">
+    {% for item in trust_strip %}
+    <div class="trust-item">
+      <span class="icon-circle"><svg><use href="#icon-{{ item.icon }}"/></svg></span>
+      {{ item.label }}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Websites Built Around Your Business</h2>
+      <p>Whether you're starting from scratch or upgrading your online presence, WebOra creates websites designed around your business and your customers.</p>
+    </div>
+    <div class="grid grid-4">
+      {% for s in services %}
+      <div class="card service-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ s.icon }}"/></svg></span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="services-footer-cta">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary">Discuss Your Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE BUILD FOR ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Built for Businesses That Want to Grow Online</h2>
+    </div>
+    <div class="audience-grid">
+      {% for a in who_we_build_for %}
+      <div class="card audience-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ a.icon }}"/></svg></span>
+        <h4>{{ a.title }}</h4>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="audience-note">Your business may be local, but your website should look world-class.</p>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Our Work</h2>
+      <p>Explore examples of the kind of websites WebOra can create for modern businesses.</p>
+    </div>
+    <div class="portfolio-grid">
+      {% for p in portfolio %}
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-thumb">
+          <span class="demo-tag">Demo Project</span>
+          <img src="{% static 'main/'|add:p.image %}" alt="{{ p.title }} preview mockup" loading="lazy" width="640" height="480">
+          <div class="portfolio-overlay">
+            <a href="{% url 'main:portfolio' %}" class="btn btn-primary btn-sm">View Demo</a>
+          </div>
+        </div>
+        <div class="portfolio-body">
+          <span class="portfolio-category">{{ p.category }}</span>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="portfolio-cta reveal">
+      <h3>Want a Website Like This?</h3>
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WEBORA ============ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Why Businesses Choose WebOra</h2>
+    </div>
+    <div class="grid grid-3">
+      {% for w in why_webora %}
+      <div class="card why-card reveal">
+        <span class="icon-circle"><svg><use href="#icon-{{ w.icon }}"/></svg></span>
+        <h3>{{ w.title }}</h3>
+        <p>{{ w.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY ============ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Modern Technology. Professional Results.</h2>
+    </div>
+    <div class="tech-strip">
+      {% for t in technologies %}
+      <span class="tech-chip">{{ t }}</span>
+      {% endfor %}
+    </div>
+    <p class="tech-note">The technology is behind the scenes. The result is a website your customers can trust.</p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head center">
+      <h2>Simple &amp; Transparent Pricing</h2>
+      <p>Choose a starting package based on your business requirements.</p>
+    </div>
+    <div class="pricing-grid">
+      {% for plan in pricing %}
+      <div class="card price-card reveal {% if plan.highlight %}is-highlight{% endif %}">
+        {% if plan.badge %}<span class="price-badge">{{ plan.badge }}</span>{% endif %}
+        <h3>{{ plan.name }}</h3>
+        <div class="price-value"><span class="amount">{{ plan.price }}</span></div>
+        <div class="price-label">{{ plan.label }}</div>
+        <p class="price-suited">{{ plan.suited_for }}</p>
+        <ul class="price-features">
+          {% for f in plan.features %}
+          <li><svg><use href="#icon-check"/></svg>{{ f }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{% url 'main:contact' %}" class="btn {% if plan.highlight %}btn-primary{% else %}btn-outline{% endif %} btn-block">{{ plan.cta }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADDITIONAL COSTS ============ -->
+<section class="section-tight section-alt">
+  <div class="container container-narrow">
+    <div class="costs-panel reveal">
+      <div class="costs-panel-top">
+        <span class="icon-circle"><svg><use href="#icon-price"/></svg></span>
+        <div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 6px;">Important: What Is Not Included</h2>
+          <p>The prices shown above are WebOra's website design and development charges only.</p>
+        </div>
+      </div>
+      <p>The following costs are separate and are paid by the client:</p>
+      <ul class="costs-list">
+        <li>Domain name</li>
+        <li>Web hosting / server</li>
+        <li>Deployment / server setup</li>
+        <li>Paid APIs</li>
+        <li>Payment gateway charges</li>
+        <li>Premium plugins</li>
+        <li>Premium themes/assets</li>
+        <li>Third-party services</li>
+        <li>Email services where applicable</li>
+        <li>Other external infrastructure costs</li>
+      </ul>
+      <div class="costs-callout">
+        <strong>Please note:</strong> Domain, hosting, deployment, paid APIs, third-party services and other external costs are not included in the development fee and are paid separately by the client.
+      </div>
+      <p class="costs-note">Final pricing may vary depending on project requirements, number of pages and advanced functionality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOM QUOTE ============ -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="quote-cta reveal">
+      <h2>Need Something More Custom?</h2>
+      <p>Every business is different. If you need custom functionality, e-commerce features, dashboards, integrations or a larger website, WebOra can create a solution based on your requirements.</p>
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Request a Custom Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section section-alt" id="process">
+  <div class="container container-narrow">
+    <div class="section-head center">
+      <h2>From Idea to Launch</h2>
+    </div>
+    <div class="process-list">
+      {% for step in process_steps %}
+      <div class="process-step reveal">
+        <span class="process-num">{{ step.number }}</span>
+        <div>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="process-note">Website development and deployment/hosting are separate stages — development is WebOra's fee, while deployment uses the infrastructure the client chooses.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ PREVIEW ============ -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-head center">
+      <h2>Common Questions</h2>
+    </div>
+    <div class="faq-list">
+      {% for item in faqs %}
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          {{ item.question }}
+          <span class="plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner"><p>{{ item.answer }}</p></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center" style="margin-top: 34px;">
+      <a href="{% url 'main:faq' %}" class="btn btn-outline">View All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta section-dark">
+  <div class="container">
+    <h2>Ready to Build Your Online Presence?</h2>
+    <p>Tell WebOra about your business and let's build a website that makes a strong first impression.</p>
+    <div class="final-cta-actions">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-lg">Get Your Website</a>
+      <a href="{% url 'main:contact' %}" class="btn btn-whatsapp btn-lg">
+        <svg width="18" height="18"><use href="#icon-whatsapp"/></svg>
+        WhatsApp WebOra
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

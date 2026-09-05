@@ -1,0 +1,38 @@
+{% load static %}
+<header class="navbar" id="site-navbar">
+  <div class="navbar-inner">
+    <a href="{% url 'main:home' %}" class="navbar-brand" aria-label="WebOra home">
+      <img src="{% static 'main/img/webora-logo-nav.png' %}" alt="WebOra logo" width="150" height="99">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="navbar-links">
+        <li><a href="{% url 'main:home' %}" data-path="/">Home</a></li>
+        <li><a href="{% url 'main:services' %}" data-path="/services/">Services</a></li>
+        <li><a href="{% url 'main:portfolio' %}" data-path="/work/">Work</a></li>
+        <li><a href="{% url 'main:pricing' %}" data-path="/pricing/">Pricing</a></li>
+        <li><a href="{% url 'main:process' %}" data-path="/process/">Process</a></li>
+        <li><a href="{% url 'main:about' %}" data-path="/about/">About</a></li>
+        <li><a href="{% url 'main:contact' %}" data-path="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="navbar-actions">
+      <a href="{% url 'main:contact' %}" class="btn btn-primary btn-sm">Get Your Website</a>
+      <button class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+    <a href="{% url 'main:home' %}" data-path="/">Home</a>
+    <a href="{% url 'main:services' %}" data-path="/services/">Services</a>
+    <a href="{% url 'main:portfolio' %}" data-path="/work/">Work</a>
+    <a href="{% url 'main:pricing' %}" data-path="/pricing/">Pricing</a>
+    <a href="{% url 'main:process' %}" data-path="/process/">Process</a>
+    <a href="{% url 'main:about' %}" data-path="/about/">About</a>
+    <a href="{% url 'main:contact' %}" data-path="/contact/">Contact</a>
+    <a href="{% url 'main:contact' %}" class="btn btn-primary btn-block">Get Your Website</a>
+  </nav>
+</header>
