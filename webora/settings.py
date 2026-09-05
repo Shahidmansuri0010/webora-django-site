@@ -21,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-q)p3gpa@9!nm#_ja!7oirwm)*$es5m#_86!t(h#fnv9m=ci7fq'
-SECRET_KEY = "YOUR_SECRET_KEY"
-# SECURITY WARNING: don't run with debug turned on in production!
+import os
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8k#p2m$vw9q!z6x@r4e_ntyu753cdfghj10bal')# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -143,3 +143,4 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
